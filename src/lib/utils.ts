@@ -175,7 +175,8 @@ export  function mockUser(cookies: Partial<{ [key: string]: string }>) {
  // 使用 fetch 函数获取网址的返回文本
   const response =  fetch("https://jokyo2-get-cct.hf.space")
   // 如果请求成功，将返回文本作为 cookie 的值
-  const cookieValue = response.ok ?  response.text() : ""
+  //const cookieValue = response.ok ?  response.text() : ""
+  const cookieValue = Promise.resolve(response).then(response => response.text())
   
   return {
     'x-forwarded-for': BING_IP || randomIP(),
@@ -186,7 +187,7 @@ export  function mockUser(cookies: Partial<{ [key: string]: string }>) {
     'referer': 'https://www.bing.com/search?showconv=1&sendquery=1&q=Bing%20AI&form=MY02CJ&OCID=MY02CJ&OCID=MY02CJ&pl=launch',
 //    cookie: `_U=${_U || defaultUID}; MUID=${randomString(32)}`,
     // 使用 cookieValue 作为 cookie 的值
-    cookie: `${cookieValue}`,
+     cookie: `${cookieValue}`,
   }
 }
 
