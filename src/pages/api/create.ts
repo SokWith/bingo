@@ -17,7 +17,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const endpoint = endpoints[count % endpoints.length]
       const { conversationId } = req.query
       const query = new URLSearchParams({
-        bundleVersion: '1.1055.8',
+        bundleVersion: '1.1482.6',
       })
       if (conversationId) {
         query.set('conversationId', String(conversationId))
