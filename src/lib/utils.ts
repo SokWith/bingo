@@ -219,7 +219,7 @@ export function createHeaders(cookies: Partial<{ [key: string]: string }> = {}, 
   } else if (useMock === false) {
     cookies.BING_HEADER = ''
   }
-  const headers = useMock ? mockUser(cookies) : cookie2Headers(cookies)
+  const headers = useMock ? await mockUser(cookies) : cookie2Headers(cookies)
   if (BING_IP) {
     headers['x-forwarded-for'] = BING_IP
   }
