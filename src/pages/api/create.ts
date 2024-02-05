@@ -12,6 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       ...req.cookies,
       BING_IP: randomIP()
     })
+    console.log(${header})
     do {
       const endpoints = [req.headers['x-endpoint'], ...(process.env.ENDPOINT || '').split(','), 'www.bing.com'].filter(Boolean)
       const endpoint = endpoints[count % endpoints.length]
