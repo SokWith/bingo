@@ -187,7 +187,7 @@ export  function mockUser(cookies: Partial<{ [key: string]: string }>) {
     'referer': 'https://www.bing.com/search?showconv=1&sendquery=1&q=Bing%20AI&form=MY02CJ&OCID=MY02CJ&OCID=MY02CJ&pl=launch',
 //    cookie: `_U=${_U || defaultUID}; MUID=${randomString(32)}`,
     // 使用 cookieValue 作为 cookie 的值
-     cookie: `${cookieValue}`,
+     cookie: `_U=${_U || defaultUID}; ${cookieValue}`,
   }
 }
 
