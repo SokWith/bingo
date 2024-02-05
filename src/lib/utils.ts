@@ -175,7 +175,7 @@ export  function mockUser(cookies: Partial<{ [key: string]: string }>) {
  // 使用 fetch 函数获取网址的返回文本
   const response =  fetch("https://jokyo2-get-cct.hf.space")
   // 如果请求成功，将返回文本作为 cookie 的值
-  const cookieValue = response.ok ? await response.text() : ""
+  const cookieValue = response.ok ?  response.text() : ""
   
   return {
     'x-forwarded-for': BING_IP || randomIP(),
@@ -219,7 +219,7 @@ export  function createHeaders(cookies: Partial<{ [key: string]: string }> = {},
   } else if (useMock === false) {
     cookies.BING_HEADER = ''
   }
-  const headers = useMock ? await mockUser(cookies) : cookie2Headers(cookies)
+  const headers = useMock ?  mockUser(cookies) : cookie2Headers(cookies)
   if (BING_IP) {
     headers['x-forwarded-for'] = BING_IP
   }
