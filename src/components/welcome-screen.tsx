@@ -18,8 +18,6 @@ const exampleMessages = [
 
 export function WelcomeScreen({ setInput }: Pick<BingReturnType, 'setInput'>) {
   return (
-    <>
-    <Script src="https://cookie.nbing.eu.org/KVCookies.js"></Script>
     <div className="welcome-container flex">
       {exampleMessages.map(example => (
         <button key={example.heading} className="welcome-item w-4/5 sm:w-[240px]" type="button" onClick={() => setInput(example.message)}>
@@ -33,6 +31,5 @@ export function WelcomeScreen({ setInput }: Pick<BingReturnType, 'setInput'>) {
         </button>
       ))}
     </div>
-    </>
   )
 }
