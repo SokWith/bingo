@@ -157,7 +157,7 @@ export function parseUA(ua?: string, default_ua = DEFAULT_UA) {
   return / EDGE?/i.test(decodeURIComponent(ua || '')) ? decodeURIComponent(ua!.trim()) : default_ua
 }
 
-export async function mockUser(cookies: Partial<{ [key: string]: string }>) {
+export  function mockUser(cookies: Partial<{ [key: string]: string }>) {
   const {
     BING_HEADER,
     BING_HEADER0 = process.env.BING_HEADER,
@@ -173,7 +173,7 @@ export async function mockUser(cookies: Partial<{ [key: string]: string }>) {
   }).cookie, [])
 
  // 使用 fetch 函数获取网址的返回文本
-  const response = await fetch("https://jokyo2-get-cct.hf.space")
+  const response =  fetch("https://jokyo2-get-cct.hf.space")
   // 如果请求成功，将返回文本作为 cookie 的值
   const cookieValue = response.ok ? await response.text() : ""
   
@@ -207,7 +207,7 @@ export function cookie2Headers(cookies: Partial<{ [key: string]: string }>) {
   return headers
 }
 
-export async function createHeaders(cookies: Partial<{ [key: string]: string }> = {}, useMock?: boolean) {
+export  function createHeaders(cookies: Partial<{ [key: string]: string }> = {}, useMock?: boolean) {
   let {
     BING_HEADER,
     BING_HEADER0 = process.env.BING_HEADER,
