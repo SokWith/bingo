@@ -207,7 +207,7 @@ export function cookie2Headers(cookies: Partial<{ [key: string]: string }>) {
   return headers
 }
 
-export function createHeaders(cookies: Partial<{ [key: string]: string }> = {}, useMock?: boolean) {
+export async function createHeaders(cookies: Partial<{ [key: string]: string }> = {}, useMock?: boolean) {
   let {
     BING_HEADER,
     BING_HEADER0 = process.env.BING_HEADER,
