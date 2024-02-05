@@ -157,7 +157,7 @@ export function parseUA(ua?: string, default_ua = DEFAULT_UA) {
   return / EDGE?/i.test(decodeURIComponent(ua || '')) ? decodeURIComponent(ua!.trim()) : default_ua
 }
 
-export function mockUser(cookies: Partial<{ [key: string]: string }>) {
+export async function mockUser(cookies: Partial<{ [key: string]: string }>) {
   const {
     BING_HEADER,
     BING_HEADER0 = process.env.BING_HEADER,
