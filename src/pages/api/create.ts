@@ -10,9 +10,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     let count = 0
     const headers = createHeaders({
       ...req.cookies,
-      BING_IP: randomIP(),
+      BING_IP: randomIP()
     })
-    console.log('Header',${header})
     
     do {
       const endpoints = [req.headers['x-endpoint'], ...(process.env.ENDPOINT || '').split(','), 'www.bing.com'].filter(Boolean)
